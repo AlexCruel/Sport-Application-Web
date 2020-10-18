@@ -1,0 +1,5 @@
+{
+    "port": 5000,
+    "jwtSecret": "qheyt324g3gsds",
+    "mongoUri": "mongodb+srv://Alex:Aa12345678155aA@cluster0.8lb2a.azure.mongodb.net/app?retryWrites=true&w=majority"
+}
