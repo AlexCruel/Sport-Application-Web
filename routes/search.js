@@ -1,18 +1,18 @@
 const {Router} = require('express');
-const User = require('../models/User');
+const Record = require('../models/Record');
 const router = Router();
 
 router.post('/test', async (req, res) => {
     try {
 
-        const { email } = req.body;
+        const { studID } = req.body;
 
-        const user = await User.findOne({ email });
+        const record = await Record.findOne({ studID });
 
-        if (!user)
+        if (!record)
             return res.status(400).json({ message: 'Nobody' });
-
-        res.status(200).json([user.email, user.password, user.id]);
+        else
+            return res.status(200).json([record.date, record.studID, record.fullName, record.facility, record.typeFacility, record.time]);
             // {
             //      email: user.email, 
             //      password: user.password,
