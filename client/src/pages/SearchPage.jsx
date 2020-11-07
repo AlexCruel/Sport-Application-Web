@@ -1,9 +1,26 @@
 import React from 'react';
+import { useState } from 'react';
+import {useHttp} from '../hook/http.hook';
+import { useMessage } from '../hook/message.hook';
 
 export const SearchPage = () => {
+    
+    const {request, error} = useHttp();
+
+    const clickHandler = async () => {
+        try {
+            const data = await request('api/search/test', 'GET');
+            console.log(data);
+        } catch(e) {}
+    }
+
     return (
         <div>
             <h1>Search Page</h1>
+
+            <input placeholder="Placeholder" id="first_name" type="text" className="validate" />
+
+            <a onClick={clickHandler} id="btn" name="btn" className="waves-effect waves-light btn">button</a>
 
             <table className="striped">
                 <thead>
