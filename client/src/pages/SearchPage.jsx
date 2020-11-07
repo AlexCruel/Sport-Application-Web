@@ -47,6 +47,51 @@ export const SearchPage = () => {
                         <td>Lollipop</td>
                         <td>$7.00</td>
                     </tr>
+                    <tr>
+                        <td>J</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jo</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jona</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jonath</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jonatha</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jonathan</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jonathan</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Jonathan</td>
+                        <td>Lollipop</td>
+                        <td>$7.00</td>
+                    </tr>
+                    <tr>
+                        <td>Alvin</td>
+                        <td>Eclair</td>
+                        <td>$0.87</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
