@@ -7,10 +7,21 @@ export const SearchPage = () => {
     
     const {request, error} = useHttp();
 
+    const [form, setForm] = useState({ email: '' });
+
+    const changeHandler = event => {
+        setForm({ ...form, [event.target.name]: event.target.value });
+    }
+    
+    const [list, listRender] = useState(<tr>ul</tr>);
+
     const clickHandler = async () => {
         try {
-            const data = await request('api/search/test', 'GET');
+            const data = await request('api/search/test', 'POST', { ...form });
             console.log(data);
+            listRender(data.map((item) => 
+            <td>{item}</td>
+            ));
         } catch(e) {}
     }
 
@@ -18,7 +29,9 @@ export const SearchPage = () => {
         <div>
             <h1>Search Page</h1>
 
-            <input placeholder="Placeholder" id="first_name" type="text" className="validate" />
+            {/* <ul>{list}</ul> */}
+
+            <input onChange={changeHandler} name="email" placeholder="Placeholder" id="first_name" type="text" className="validate" />
 
             <a onClick={clickHandler} id="btn" name="btn" className="waves-effect waves-light btn">button</a>
 
@@ -32,7 +45,8 @@ export const SearchPage = () => {
                 </thead>
 
                 <tbody>
-                    <tr>
+                    <tr>{list}</tr>
+                    {/* <tr>
                         <td>Alvin</td>
                         <td>Eclair</td>
                         <td>$0.87</td>
@@ -91,7 +105,7 @@ export const SearchPage = () => {
                         <td>Alvin</td>
                         <td>Eclair</td>
                         <td>$0.87</td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </table>
         </div>
