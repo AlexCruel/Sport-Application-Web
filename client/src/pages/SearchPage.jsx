@@ -40,22 +40,24 @@ export const SearchPage = () => {
 
             <a onClick={clickHandler} id="btn" name="btn" className="waves-effect waves-light btn">button</a>
 
-            <table className="striped">
-                <thead>
-                    <tr>
-                        <th>Дата</th>
-                        <th>Студ ID</th>
-                        <th>ФИО</th>
-                        <th>Объект</th>
-                        <th>Тип занятия</th>
-                        <th>Часы</th>
-                    </tr>
-                </thead>
+            <div style={{ minHeight: '427px', marginBottom: '40px' }}>
+                <table className="striped">
+                    <thead>
+                        <tr>
+                            <th>Дата</th>
+                            <th>Студ ID</th>
+                            <th>ФИО</th>
+                            <th>Объект</th>
+                            <th>Тип занятия</th>
+                            <th>Часы</th>
+                        </tr>
+                    </thead>
 
-                <tbody>
-                    {list}
-                </tbody>
-            </table>
+                    <tbody>
+                        {list}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }

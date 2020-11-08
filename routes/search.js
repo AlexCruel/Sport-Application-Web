@@ -9,8 +9,6 @@ router.post('/test', async (req, res) => {
 
         const record = await Record.find({ studID });
 
-        console.log(record);
-
         if (!record)
             return res.status(400).json({ message: 'Nobody' });
         else
