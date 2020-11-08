@@ -7,17 +7,14 @@ router.post('/test', async (req, res) => {
 
         const { studID } = req.body;
 
-        const record = await Record.findOne({ studID });
+        const record = await Record.find({ studID });
+
+        console.log(record);
 
         if (!record)
             return res.status(400).json({ message: 'Nobody' });
         else
-            return res.status(200).json([record.date, record.studID, record.fullName, record.facility, record.typeFacility, record.time]);
-            // {
-            //      email: user.email, 
-            //      password: user.password,
-            //      id: user.id
-            // });
+            return res.status(200).json(record);
 
     } catch(e) {
         res.status(500).json({ message: 'Something wrong... Try again!' });

@@ -13,14 +13,21 @@ export const SearchPage = () => {
         setForm({ ...form, [event.target.name]: event.target.value });
     }
     
-    const [list, listRender] = useState(<tr></tr>);
+    const [list, listRender] = useState();
 
     const clickHandler = async () => {
         try {
             const data = await request('api/search/test', 'POST', { ...form });
-            console.log(data);
-            listRender(data.map((item) => 
-                <td>{item}</td>
+
+            listRender(data.map((item, index) => 
+                <tr key={index}>
+                    <td>{item.date}</td>
+                    <td>{item.studID}</td>
+                    <td>{item.fullName}</td>
+                    <td>{item.facility}</td>
+                    <td>{item.typeFacility}</td>
+                    <td>{item.time}</td>
+                </tr>
             ));
         } catch(e) {}
     }
@@ -46,7 +53,7 @@ export const SearchPage = () => {
                 </thead>
 
                 <tbody>
-                    <tr>{list}</tr>
+                    {list}
                 </tbody>
             </table>
         </div>
